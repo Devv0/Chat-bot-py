@@ -1,0 +1,69 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+   <!--Gives random response for hello-->
+   <category> 
+      <pattern>HELLO</pattern>
+      <template>
+         <random>
+            <li> Hi </li>
+            <li> Hello </li>
+            <li> Hello, I am MTG bot feel free to ask me questions about Magic the Gathering </li>
+         </random>
+      </template>
+   </category>
+
+   <!--Uses users statement to give personalised reply-->
+   <category>
+      <pattern>I LIKE PLAYING *</pattern>
+      <template>
+         I too like <star/>, it is very fun.
+      </template>
+   </category>
+   
+   <!--Gives response if user types bye followed by anything else-->
+   <category>
+      <pattern>BYE</pattern>
+      <template>
+          #1$
+      </template>
+   </category>
+
+   <!--Saves user input for later use-->
+   <category>
+      <pattern>MY FAVORITE CARD IS *</pattern>
+      <template>
+         <set name = "card"> <star/> </set> is a good card!
+      </template>  
+   </category>  
+   
+   <!--Uses previouse user message to give response-->
+   <category>
+      <pattern>WHAT WAS MY FAVORITE CARD</pattern>
+      <template>
+        I belive it was <get name = "card"/> Did I get it right!
+      </template>  
+   </category>  
+
+   <category>
+      <pattern>I KNOW THAT * IS *</pattern>
+      <template>
+          #31$ <star index = "1"/> is <star index = "2"/>
+      </template>
+   </category>
+
+   <category>
+      <pattern>CHECK THAT * IS *</pattern>
+      <template>
+          #32$ <star index = "1"/> is <star index = "2"/>
+      </template>
+   </category>
+
+   <!--Default reponse to any message not in aiml-->
+   <category>
+      <pattern>*</pattern>
+      <template>
+          #99$
+      </template>
+   </category>
+
+</aiml>

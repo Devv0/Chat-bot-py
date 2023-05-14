@@ -1,0 +1,13 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<category>
+<!--Opens aiml file-->
+<pattern>
+    LOAD AIML B
+</pattern>
+<template>
+    <learn>mtg.aiml</learn>
+</template>
+</category>
+
+</aiml>
